@@ -1,0 +1,172 @@
+
+body {
+    margin: 0;
+    height: 100%;
+    background-color: #34495e;
+    overflow: hidden;
+}
+
+.line{
+    width: 6px;
+    height: 60px;
+    border-left: 1px solid rgb(233, 226, 226);
+    margin-top: 12px;
+    margin-right: 50px;
+}
+
+nav {
+    height: 90px;
+    width: 100%;
+    background-color: white;
+    min-width: 1300px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    margin-right: 15px;
+}
+
+li p, select {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    margin-right: 15px;
+    text-decoration: none;
+    background-color: transparent;
+    border-width: 0;
+    font-family: 'Open Sans', sans-serif;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#begin:hover, #newArray:hover {
+    cursor: pointer;
+    background-color: azure;
+    color: #333;
+}
+
+#title {
+    padding-left: 50px;
+    padding-right: 50px;
+    border-width: 0;
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 5px;
+}
+
+#main-container {
+    position: absolute;
+    height: 600px;
+    width: 880px;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+#title::selection, #begin::selection, #newArray::selection {
+    background-color: transparent;
+}
+
+
+.array-bar {
+    width: 8px;
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    margin: 0 1px;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+#algo-select {
+    margin-top: 17px;
+    height: 52px;
+    font-size: 18px;
+    border-color: white;
+    background-color: #333;
+}
+
+#sliderContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 14px;
+    height: 50px;
+    padding-top: 8px;
+    margin-left: 10px;
+}
+
+#speedSlider {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 5px;
+    background: #eeebeb;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#speedSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#speedSlider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+#speedsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+h4 {
+    color: white;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0px 7px;
+}
+
+#githubIconContainer {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    float: right;
+    border-radius: 25px;
+    margin-top: 24px;
+    margin-right: 40px;
+}
+
+#githubIcon {
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+#githubIconContainer:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}

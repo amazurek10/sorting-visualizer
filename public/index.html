@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sorting Algorithm Visualizer</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><p id="title">Sorting Algorithm Visualizer</p></li>
+                <li class="line"></li>
+                <li><p id="begin" onclick="beginVisual()">Begin Visual</p></li>
+                <li><p id="newArray" onclick="generateNewArray()">Generate New Array</p></li>
+                <li><select name="algorithms" id="algo-select">
+                    <!--<option value="default" selected>Algorithm</option> !-->
+                    <option value="selectionSort" selected>Selection Sort</option>
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="mergeSort">Merge Sort</option>
+                    <option value="quickSort">Quick Sort</option>
+                </select></li>
+                <li>
+                    <div id="sliderContainer">
+                        <input type="range" min="1" max="50" value="25" id="speedSlider">
+                        <div id="speedsContainer">
+                            <h4 id="fast" unselectable='on'>Fast</h4>
+                            <h4 id="nomral" unselectable='on'>Normal</h4>
+                            <h4 id="slow" unselectable='on'>Slow</h4>
+                        </div>
+                    </div>
+                </li>
+                <div id="githubIconContainer" onclick="redirectGithub()">
+                    <img id="githubIcon" src="images/github-logo.png" alt="github-icon" height="35" width="35">
+                </div>
+            </ul>
+        </nav>
+        <div id="main-container"></div>
+        <script src="js/main.js"></script>
+        <script src="js/algorithms.js"></script>
+    </body>
+</html>
