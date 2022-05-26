@@ -4,6 +4,10 @@ body {
     height: 100%;
     background-color: #31445a;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .line{
@@ -64,15 +68,14 @@ li p, select {
 }
 
 #main-container {
-    position: absolute;
     height: 600px;
     width: 880px;
-    top: 0; bottom: 0; left: 0; right: 0;
-    margin: auto;
+    /* top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto; */
     background-color: white;
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
+    margin-top: 5%;
 }
 
 #title::selection, #begin::selection, #newArray::selection {
