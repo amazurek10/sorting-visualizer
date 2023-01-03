@@ -75,7 +75,7 @@ li p, select {
     background-color: white;
     display: flex;
     flex-direction: row;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 #title::selection, #begin::selection, #newArray::selection {

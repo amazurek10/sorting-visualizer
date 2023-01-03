@@ -56,41 +56,35 @@ async function selectionSort() {
     const children = document.querySelector("#main-container").children;
     var speed = getSpeed();
 
-    for (var i = 0; i < children.length; i++) {
-        var min_index= i;
+    for (let i = 0; i < array.length; i++) {
+        let minIndex = i;
 
-        //await sleep(10);
+        children[i].style.backgroundColor = "#EB455F";  // Index we're focusing on
         await sleep(speed);
-        children[i].style.backgroundColor = "#3fd458";
 
-        for (var j = i + 1; j < children.length; j++) {
-            children[j].style.backgroundColor = "yellow";
+        for (let j = i + 1; j < array.length; j++) {
+            children[j].style.backgroundColor = "#ADA2FF";  // What we're comparing to
 
-            if (array[j] < array[min_index]) {
-                min_index = j;
-                children[j].style.backgroundColor = "red";
-                await sleep(speed);
+            if (array[j] < array[minIndex]) {
+                minIndex = j;
+                children[j].style.backgroundColor = "#0081C9";  // A condition is met
             }
-
-            //await sleep(10);
-            await sleep(speed);
-            children[j].style.backgroundColor = "black";
         }
 
-        var temp = array[min_index];
-        array[min_index] = array[i];
-        array[i] = temp;
+        if (minIndex !== i) {
+            [array[i], array[minIndex]] = [array[minIndex], array[i]];
+        }
 
         children[i].style.backgroundColor = "black";
-
-        $('#main-container').empty();
-        showArray(array);
+        children[i].style.height = String(array[i]) + "px";
+        children[minIndex].style.height = String(array[minIndex]) + "px";
     }
 
     await sleep(50);
     for (var i = 0; i < children.length; i++) {
         children[i].style.backgroundColor = "green";
-    } 
+        await sleep(10);
+    }
 
     $("#begin").css("opacity", "0.3");
     $("#begin").addClass("disabled");
@@ -107,38 +101,38 @@ async function bubbleSort() {
 
     const children = document.querySelector("#main-container").children;
     var speed = getSpeed();
-    
-    for (var i = 0; i < children.length; i++) {
-        for (var j = 0; j < children.length - 1; j++) {
 
-            children[j].style.backgroundColor = "#3fd458";
-            children[j + 1].style.backgroundColor = "purple";
-            await sleep(speed - 10);
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < array.length; i++) {
+            children[i].style.backgroundColor = "#EB455F"; // Index
 
-            if (array[j] > array[j + 1]) {
-                await sleep(speed - 10);
-                children[j].style.backgroundColor = "red";
+            if (array[i + 1]) {
+                children[i + 1].style.backgroundColor = "#ADA2FF"; // What we're comparing with
+            }
+            await sleep(speed);
 
-                var temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
+            if (array[i] > array[i + 1]) {
+                [array[i], array[i + 1]] = [array[i + 1], array[i]];
+                swapped = true;
+
+                children[i + 1].style.backgroundColor = "#0081C9";    // Condition is met
+                await sleep(speed);
+
+                children[i].style.height = String(array[i]) + "px";
+                children[i + 1].style.height = String(array[i + 1]) + "px";
             }
 
-            await sleep(speed - 10);
-            children[j].style.backgroundColor = "black";
+            children[i].style.backgroundColor = "black";
         }
-
-        await sleep(speed);
-        children[i].style.backgroundColor = "black";
-
-        $('#main-container').empty();
-        showArray(array);
-    }
+    } while (swapped);
 
     await sleep(50);
     for (var i = 0; i < children.length; i++) {
         children[i].style.backgroundColor = "green";
-    } 
+        await sleep(10);
+    }
 
     $("#begin").css("opacity", "0.3");
     $("#begin").addClass("disabled");
