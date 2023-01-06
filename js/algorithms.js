@@ -149,34 +149,25 @@ async function insertionSort() {
 
     const children = document.querySelector("#main-container").children;
     var speed = getSpeed();
-    var counter;
 
-    let i, key, j;
-    for (i = 1; i < array.length; i++) {
+    for (let i = 1; i < array.length; i++) {    
+        let currentValue = array[i];
+        let j;
+
+        children[i - 1].style.backgroundColor = "#ADA2FF";
         await sleep(speed);
-        counter = 0;
-
-        children[i].style.backgroundColor = "yellow";
-        await sleep(80);
-
-        while (counter != i) {
-            children[counter].style.backgroundColor = "green";
-            counter++;
-            await sleep(speed - 20);
-        }
-
-        key = array[i];
-        j = i - 1;
-
-        while (j >= 0 && array[j] > key) {
+        for (j = i - 1; j >= 0 && array[j] > currentValue; j--) {
             array[j + 1] = array[j];
-            j = j - 1;
+
+            children[j + 1].style.height = String(array[j]) + "px";
+            children[i].style.backgroundColor = "#EB455F";
+            children[j + 1].style.backgroundColor = "#ADA2FF";
+            await sleep(20);
         }
 
-        array[j + 1] = key;
+        array[j + 1] = currentValue;
+        children[j + 1].style.height = String(currentValue) + "px";
 
-        $('#main-container').empty();
-        showArray(array);
     }
 
     await sleep(50);
