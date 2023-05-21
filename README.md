@@ -1,7 +1,7 @@
 
 # Sorting Algorithm Visualizer
 
-A single page web application that helps visualize the sorting of data within an array using popular sorting algorithms.
+A single page web application that helps visualize the sorting of data within an array using popular sorting algorithms. To view the page: https://amazurek10.github.io/sorting-visualizer/
 
 ## Algorithms Supported:
  - Selection Sort (Finds the smallest number in the iteration and swaps it to the front)
